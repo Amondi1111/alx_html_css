@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'SpinCycleOT';
+  src: url('assets/fonts/spincycle_ot.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('assets/headphones_hero_1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+    font-family: 'Source Sans Pro', sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  text-align: center;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+  
+}
+
+.site-logo {
+  width: 21.37px;
+  height: auto;
+ margin: 0;
+  
+}
+
+.brand-name {
+ font-family: 'SpinCycleOT', sans-serif;
+  font-size: 24px;
+  font-weight: 200;
+  color: #FFFFFF;
+  margin-right: 0px;
+  margin-left: -180px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white; 
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #FF6565;
+}
+
+
+
+.hero-section {
+width: 637px;
+height: 327px;
+left: 314px;
+top: 344px;
+align-items: center;
+
+padding: 350px 500px;
+display:flex;
+gap:20px;
+
+}
+
+.hero-text {
+  font-family: 'source sans pro', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  color:#FFFFFF;
+
+}
+
+.hero-text h3{
+
+  font: size 32px;;
+  padding-bottom: 30px;
+}
+
+.hero-text p {
+    font-size: 16px;
+    padding: 15px 120px;
+    margin: -45px;
+  }
+
+.button {
+  color: #FFFFFF;
+  background-color: #FF6565;
+  width: 162px;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 200px;
+  padding: 15px 20px;
+  position: relative; 
+  top: 104.47px;
+  left: 237px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-description {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+
+
+
