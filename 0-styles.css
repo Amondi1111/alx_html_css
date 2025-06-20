@@ -8,40 +8,40 @@
 body {
   margin: 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background-image: url('assets/headphones_hero_1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-    font-family: 'Source Sans Pro', sans-serif;
+  background-attachment: fixed;
+  font-family: 'Source Sans Pro', sans-serif;
   color: #ffffff;
   overflow-x: hidden;
 }
 
+/* ===================== Desktop Styles ===================== */
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  text-align: center;
 }
 
 .branding {
   display: flex;
   align-items: center;
   gap: 200px;
-  
 }
 
 .site-logo {
   width: 21.37px;
   height: auto;
- margin: 0;
-  
+  margin: 0;
 }
 
 .brand-name {
- font-family: 'SpinCycleOT', sans-serif;
+  font-family: 'SpinCycleOT', sans-serif;
   font-size: 24px;
   font-weight: 200;
   color: #FFFFFF;
@@ -49,57 +49,54 @@ body {
   margin-left: -180px;
 }
 
-nav {
+.nav-links {
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
-nav a {
+.nav-links a {
   text-decoration: none;
-  color: white; 
+  color: white;
   font-size: 16px;
   font-weight: 600;
   transition: color 0.3s ease;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: #FF6565;
 }
 
-
-
 .hero-section {
-width: 637px;
-height: 327px;
-left: 314px;
-top: 344px;
-align-items: center;
-
-padding: 350px 500px;
-display:flex;
-gap:20px;
-
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .hero-text {
-  font-family: 'source sans pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
   font-weight: 200;
-  color:#FFFFFF;
-
+  color: #FFFFFF;
 }
 
-.hero-text h3{
-
-  font: size 32px;;
+.hero-text h2 {
+  font-size: 32px;
   padding-bottom: 30px;
 }
 
 .hero-text p {
-    font-size: 16px;
-    padding: 15px 120px;
-    margin: -45px;
-  }
+  font-size: 16px;
+  padding: 15px 20px;
+  margin: 0;
+}
 
 .button {
   color: #FFFFFF;
@@ -107,11 +104,7 @@ gap:20px;
   width: 162px;
   border-radius: 20px;
   margin-top: 40px;
-  margin-bottom: 200px;
   padding: 15px 20px;
-  position: relative; 
-  top: 104.47px;
-  left: 237px;
   text-align: center;
   border: none;
   cursor: pointer;
@@ -122,11 +115,131 @@ gap:20px;
   font-size: 12px;
   color: #FFFFFF;
   text-align: center;
-  margin: 0 auto;
+  margin: 40px auto 0;
   line-height: 1.6;
   max-width: 600px;
 }
 
+/* Hide checkbox + menu icon by default */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 100px;
+    text-align: center;
+  }
+  .menu-icon {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #FFFFFF;
+    position: static;
+    top: 22px;
+    left: 20px;
+    z-index: 1000;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+    margin-right: auto;
+    order: -1;
+
+  }
+
+  .menu-icon::before {
+  content: "☰";  
+  font-size: 28px;
+  display: inline-block;
+  transition: content 0.3s ease;
+}
+
+.menu-toggle:checked + .menu-icon::before {
+  content: "✖"; 
+  font-size: 28px;
+}
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 20px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: black;
+    z-index: 999;
+  }
+
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .branding {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    margin: 0;
+  }
+
+  .site-logo {
+  width: 20px; 
+  margin-left: 30px;
+  display: inline-block;
+  padding: 15px;
+}
+
+.brand-name {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+  .hero-section {
+    flex-direction: column;
+    padding: 100px 20px;
+    width: 100%;
+    height: auto;
+    padding-top: 230px;
+    box-sizing: border-box;
+  }
+
+ .hero-text p {
+  padding: 0 20px;      
+  margin: 0 auto;      
+  max-width: 100%;      
+  word-break: break-word; 
+}
 
 
+  .button {
+    margin: 30px auto;
+    position: static;
+  }
 
+  .hero-description {
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+   .menu-toggle:checked ~ .hero-section {
+    margin-top: 200px;
+  }
+}
