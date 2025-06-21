@@ -1,0 +1,414 @@
+@font-face {
+  font-family: 'SpinCycleOT';
+  src: url('assets/fonts/spincycle_ot.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 1. Load the icon font files */
+@font-face {
+  font-family: 'holberton_school-icon';
+  src:  url('assets/fonts/holberton_school-icon.eot'); 
+  src:  url('assets/fonts/holberton_school-icon.eot?#iefix') format('embedded-opentype'), 
+        url('assets/fonts/holberton_school-icon.woff2') format('woff2'), 
+        url('assets/fonts/holberton_school-icon.woff') format('woff'), 
+        url('assets/fonts/holberton_school-icon.ttf') format('truetype'), 
+        url('assets/fonts/holberton_school-icon.svg#holberton_school-icon') format('svg'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 2. Base .holberton_school-icon class */
+.holberton_school-icon {
+  font-family: 'holberton_school-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Individual icon classes */
+.holberton_school-icon-sound:before      { content: "\e90e"; }
+.holberton_school-icon-video:before      { content: "\e910"; }
+.holberton_school-icon-music:before      { content: "\e90d"; }
+.holberton_school-icon-hearing:before    { content: "\e909"; }
+
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background-image: url('assets/headphones_hero_1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ===================== Desktop Styles ===================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+}
+
+.site-logo {
+  width: 21.37px;
+  height: auto;
+  margin: 0;
+}
+
+.brand-name {
+  font-family: 'SpinCycleOT', sans-serif;
+  font-size: 24px;
+  font-weight: 200;
+  color: #FFFFFF;
+  margin-right: 0px;
+  margin-left: -180px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+.nav-links a:hover {
+  color: #FF6565;
+}
+
+.hero-section {
+  max-width: 800px;
+  margin: 0 auto;
+  height: auto;
+  min-height: 100vh;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-text {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  color: #FFFFFF;
+}
+
+.hero-text h2 {
+  font-size: 32px;
+  padding-bottom: 30px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  padding: 15px 20px;
+  margin: 0;
+}
+
+.button {
+  color: #FFFFFF;
+  background-color: #FF6565;
+  width: 162px;
+  border-radius: 20px;
+  margin-top: 40px;
+  padding: 15px 20px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-description {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 40px auto 0;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Hide checkbox + menu icon by default */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 100px;
+    text-align: center;
+  }
+  .menu-icon {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #FFFFFF;
+    position: static;
+    top: 22px;
+    left: 20px;
+    z-index: 1000;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+    margin-right: auto;
+    order: -1;
+
+  }
+
+  .menu-icon::before {
+  content: "☰";  
+  font-size: 28px;
+  display: inline-block;
+  transition: content 0.3s ease;
+}
+
+.menu-toggle:checked + .menu-icon::before {
+  content: "✖"; 
+  font-size: 28px;
+}
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 20px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: black;
+    z-index: 999;
+  }
+
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .branding {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    margin: 0;
+  }
+
+  .site-logo {
+  width: 20px; 
+  margin-left: 30px;
+  display: inline-block;
+  padding: 15px;
+}
+
+.brand-name {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+  .hero-section {
+    flex-direction: column;
+    padding: 100px 20px;
+    width: 100%;
+    height: auto;
+    padding-top: 230px;
+    box-sizing: border-box;
+  }
+
+ .hero-text p {
+  padding: 0 20px;      
+  margin: 0 auto;      
+  max-width: 100%;      
+  word-break: break-word; 
+}
+
+
+  .button {
+    margin: 30px auto;
+    position: static;
+  }
+
+  .hero-description {
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+   .menu-toggle:checked ~ .hero-section {
+    margin-top: 200px;
+  }
+}
+
+
+.what-we-do {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 30px 20px;
+
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card i {
+  font-size: 48px;
+  color: #FF6565;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.our-results {
+  padding: 100px 20px;
+  text-align: center;
+  background-image: url('assets/headphones_hero_2.jpg');
+  background-size: cover;
+  color: white;
+}
+
+.results-title {
+  font-size: 28px;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.results-description {
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  margin-top: 10px;
+}
+
+.pentagon-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.pentagon-card {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+.pentagon-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.metric-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.metric-label {
+  font-size: 7px;
+  display: block;
+  margin-top: 5px;
+}
+
+
+
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 24px;
+  }
+  .service-card i {
+    font-size: 40px;
+  }
+}
+
+
+
